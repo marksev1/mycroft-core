@@ -21,6 +21,7 @@ from Queue import Queue
 from threading import Thread
 
 import serial
+import time
 
 from mycroft.client.enclosure.arduino import EnclosureArduino
 from mycroft.client.enclosure.eyes import EnclosureEyes
@@ -78,6 +79,7 @@ class EnclosureReader(Thread):
 
         if "mic.test" in data:
             self.client.emit(Message("speak", metadata={'utterance': "Testing microphone for five seconds."}))
+            time.sleep(3)
             record("/tmp/test.wav", 5)
             play_wav("/tmp/test.wav")
 
