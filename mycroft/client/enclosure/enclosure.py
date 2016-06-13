@@ -77,7 +77,7 @@ class EnclosureReader(Thread):
             kill(['mimic'])  # TODO - Refactoring in favor of Mycroft Stop
 
         if "mic.test" in data:
-            self.emitter.emit(Message("speak", metadata={'utterance': "Testing microphone for five seconds."}))
+            self.client.emit(Message("speak", metadata={'utterance': "Testing microphone for five seconds."}))
             record("/tmp/test.wav", 5)
             play_wav("/tmp/test.wav")
 
