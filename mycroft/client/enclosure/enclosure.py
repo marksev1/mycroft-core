@@ -21,6 +21,7 @@ from Queue import Queue
 from threading import Thread
 
 import serial
+import time
 
 from mycroft.client.enclosure.arduino import EnclosureArduino
 from mycroft.client.enclosure.eyes import EnclosureEyes
