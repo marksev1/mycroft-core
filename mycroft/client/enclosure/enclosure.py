@@ -89,8 +89,8 @@ class EnclosureReader(Thread):
                 Message("DecreaseVolumeIntent", metadata={'play_sound': True}))
 
         if "mic.test" in data:
-            self.client.emit(Message("speak", metadata={'utterance': "Testing microphone for five seconds."}))
-            time.sleep(3)
+            self.client.emit(Message("speak", metadata={'utterance': "Testing microphone recording for five seconds."}))
+            time.sleep(4)
             record("/tmp/test.wav", 5)
             play_wav("/tmp/test.wav")
 
