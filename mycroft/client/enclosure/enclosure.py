@@ -90,7 +90,7 @@ class EnclosureReader(Thread):
 
         if "mic.test" in data:
             self.client.emit(Message("speak", metadata={'utterance': "Testing microphone recording for five seconds."}))
-            time.sleep(4)
+            time.sleep(5)
             record("/tmp/test.wav", 5)
             play_wav("/tmp/test.wav")
 
