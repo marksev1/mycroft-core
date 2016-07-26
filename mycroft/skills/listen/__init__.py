@@ -36,7 +36,7 @@ class ListenSkill(MycroftSkill):
         
         self.load_vocab_files(join(dirname(__file__), 'vocab', self.lang))
         intent = IntentBuilder("ListenIntent").require("ListenKeyword").build()
-        self.emitter.on('recognizer_loop:utterance', handle_intent)
+        self.register_intent(intent, self.handle_intent)
 
     def handle_intent(self, message):
         self.emitter.emit(Message('listen', metadata={'utterance': message.metadata.get('utterance')}))
