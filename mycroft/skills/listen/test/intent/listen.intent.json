@@ -1,0 +1,7 @@
+{
+  "utterance": "Listen",
+  "intent_type": "ListenIntent",
+  "intent": {
+    "ListenKeyword": "listen"
+  }
+}
