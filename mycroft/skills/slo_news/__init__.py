@@ -49,9 +49,10 @@ class SLONewsSkill(MycroftSkill):
 
     def handle_intent(self, message):
         try:
-            data = feedparser.parse(self.url_rss)
             self.speak_dialog('slo.news')
-            time.sleep(3)
+            time.sleep(2)
+            data = feedparser.parse(self.url_rss)
+            time.sleep(5)
             self.process = play_mp3(data['entries'][0]['links'][0]['href'])
 
         except Exception as e:
