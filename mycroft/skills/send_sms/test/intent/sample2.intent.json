@@ -1,0 +1,7 @@
+{
+  "utterance": "message marko I'm home",
+  "intent_type": "SendSMSIntent",
+  "intent": {
+    "SendSMSKeyword": "message"
+  }
+}
